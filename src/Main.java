@@ -7,10 +7,10 @@ import java.util.Scanner;
 public class Main {
     private final static Scanner scanner = new Scanner(System.in);
     private static final Map<String, Demo> demos = Map.ofEntries(
-            new AbstractMap.SimpleImmutableEntry("convert", new ConverterDemo()),
-            new AbstractMap.SimpleImmutableEntry("prompt", new PromptDemo()),
-            new AbstractMap.SimpleImmutableEntry("counting-array", new CountingArrayDemo()),
-            new AbstractMap.SimpleImmutableEntry("sum-sign", new CheckSumSignDemo())
+            new AbstractMap.SimpleImmutableEntry<>("convert", new ConverterDemo()),
+            new AbstractMap.SimpleImmutableEntry<>("prompt", new PromptDemo()),
+            new AbstractMap.SimpleImmutableEntry<>("counting-array", new CountingArrayDemo()),
+            new AbstractMap.SimpleImmutableEntry<>("sum-sign", new CheckSumSignDemo())
     );
 
     public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class Main {
 
     private static void printDemoList() {
         System.out.println("To select a demo enter its key");
-        demos.forEach((k, v) -> System.out.println(String.format("\t~ \"%s\"", k)));
+        demos.forEach((k, v) -> System.out.printf("\t~ \"%s\"%n", k));
         System.out.println();
     }
 
@@ -38,7 +38,7 @@ public class Main {
         if (demos.containsKey(key)) {
             demos.get(key).demo();
         } else {
-            System.out.println(String.format("Demo runner by key \"%s\" does not exist", key));
+            System.out.printf("Demo runner by key \"%s\" does not exist%n", key);
         }
     }
 }

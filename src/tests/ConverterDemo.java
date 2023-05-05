@@ -30,7 +30,7 @@ public class ConverterDemo implements Demo {
 
     private double getValue() {
         try {
-            return scanner.nextDouble();
+            return scanner.nextFloat();
         } catch (InputMismatchException exception) {
             return 0;
         }
